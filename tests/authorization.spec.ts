@@ -46,5 +46,5 @@ describe('[SHARELANE-2] Authorization', async () => {
 
         expect(await successAuthorizationMessage.getText()).to.contains('Hello')
         expect(await logout.getText()).to.equal('Logout')
-    }).timeout(10000);
+    });
 })

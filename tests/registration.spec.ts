@@ -30,7 +30,7 @@ describe('[SHARELANE-1] Registration', async () => {
 
         const successMessage = await driver.findElement(By.className('confirmation_message'))
         expect(await successMessage.getText()).to.equal('Account is created!')
-    }).timeout(10000);
+    });
 
     it('should validate incorrect registration data', async () => {
         await driver.get('https://www.sharelane.com/cgi-bin/register.py')
@@ -56,5 +56,5 @@ describe('[SHARELANE-1] Registration', async () => {
 
         errorMessage = await driver.findElement(By.css('.error_message'))
         expect(await errorMessage.getText()).to.equal('Oops, error on page. Some of your fields have invalid data or email was previously used')
-    }).timeout(10000);
+    });
 });
