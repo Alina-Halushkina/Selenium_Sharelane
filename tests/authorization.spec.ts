@@ -42,7 +42,7 @@ describe('[SHARELANE-2] Authorization', async () => {
 
         await driver.wait(until.urlContains('cgi-bin/main.py'), 10000)
         let successAuthorizationMessage = await driver.findElement(By.className('user'))
-        const logout = await driver.findElement(By.css('html > body > center > table > tbody > tr:nth-of-type(3) > td > a'))
+        const logout = await driver.findElement(By.css('a[href="./log_out.py"]'))
 
         expect(await successAuthorizationMessage.getText()).to.contains('Hello')
         expect(await logout.getText()).to.equal('Logout')
