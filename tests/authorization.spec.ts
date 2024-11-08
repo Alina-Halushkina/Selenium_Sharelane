@@ -31,7 +31,7 @@ describe('[SHARELANE-2] Authorization', async () => {
         let successRegistrationMessage = await driver.findElement(By.className('confirmation_message'))
         expect(await successRegistrationMessage.getText()).to.equal('Account is created!')
 
-        const emailElement = await driver.findElement(By.css('html > body > center > table > tbody > tr:nth-of-type(6) > td > table > tbody > tr:nth-of-type(4) > td > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > b'))
+        const emailElement = await driver.findElement(By.xpath('//td//tbody//b'))
         const email = await emailElement.getText()
 
         await driver.get('https://sharelane.com/cgi-bin/main.py')
